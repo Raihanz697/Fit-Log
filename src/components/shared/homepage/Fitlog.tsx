@@ -18,13 +18,13 @@ const Fitlog = async () => {
         <section className="container mx-auto my-[70px] px-4">
 
             {/* Section Heading */}
-            <div className="mb-10 text-center">
+            <div className="mb-8 text-left">
                 
 
-                <h2 className="text-3xl justify-start" >THE LIBRARY</h2>
+                <h2 className="text-3xl " >THE LIBRARY</h2>
                 
 
-                <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-400">
+                <p className=" mt-3 max-w-2xl text-sm text-gray-400">
                     Twelve lifts covering every major muscle group.
                 </p>
             </div>
