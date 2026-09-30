@@ -1,6 +1,14 @@
-import React from 'react';
+"use client";
 
-const page = () => {
+import { FitlogContext } from '@/context/FitlogContext';
+import React, { useContext } from 'react';
+
+const ListedWorkouts = () => {
+    const {todayWorkouts} =useContext(FitlogContext)
+    console.log(todayWorkouts,"todayWorkouts");
+
+    const {savedWorkouts}= useContext(FitlogContext)
+    console.log(savedWorkouts,'savedWorkouts');
     return (
         <div>
             
@@ -8,4 +16,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default ListedWorkouts;

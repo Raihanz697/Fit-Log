@@ -6,7 +6,7 @@ import { IFitlog } from "@/types/work.typs";
 
 
 const getFitlogs = async () => {
-    const response = await fetch("http://localhost:3001/fitlogData.json");
+    const response = await fetch("http://localhost:3000/fitlogData.json");
     const data = await response.json();
     return data;
 };

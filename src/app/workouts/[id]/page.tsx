@@ -1,3 +1,5 @@
+import SavelaterButton from '@/components/workoutDetails/SavelaterButton';
+import TodaysPlanButton from '@/components/workoutDetails/TodaysPlanButton';
 import { IFitlog } from '@/types/work.typs';
 import Image from 'next/image';
 import React from 'react';
@@ -10,7 +12,7 @@ interface IWorkoutDetailsPageProps {
 }
 
 const getFitlogs = async () => {
-    const response = await fetch("http://localhost:3001/fitlogData.json");
+    const response = await fetch("http://localhost:3000/fitlogData.json");
     const data = await response.json();
     return data;
 };
@@ -165,13 +167,9 @@ const WorkoutDetailsPage = async ({ params }: IWorkoutDetailsPageProps) => {
                     {/* Buttons */}
                     <div className="card-actions mt-7">
 
-                        <button className="flex items-center gap-2 rounded-lg bg-[#baff00] px-5 py-3 text-sm font-bold text-black hover:bg-[#c8ff33]">
-                            Add to today's plan
-                        </button>
+                        <TodaysPlanButton fitlog={fitlog} />
 
-                        <button className="rounded-lg border border-[#3a3f49] bg-transparent px-5 py-3 text-sm text-gray-200 hover:bg-[#181b22]">
-                            Save for later
-                        </button>
+                        <SavelaterButton fitlog={fitlog}/>
 
                     </div>
 
