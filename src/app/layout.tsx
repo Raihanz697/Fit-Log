@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
 import FitlogProvider from "@/context/FitlogContext";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +27,28 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="dark"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      
+
       <body className="min-h-full flex flex-col">
         <FitlogProvider>
-        <Navbar />
-        {children}
+          <Navbar />
+          {children}
         </FitlogProvider>
-      
+        <Toaster position="top-right" toastOptions={
+          {
+            style: {
+              background: "#1a1a1a",
+              color: "#fff",
+              border: "1px solid #2a2a2a",
+            },
+            success: {
+              iconTheme: { primary: "#ccff00", secondary: "#0a0a0a" },
+            },
+          }}
+        />
 
-        </body>
+
+
+      </body>
     </html>
   );
 }
